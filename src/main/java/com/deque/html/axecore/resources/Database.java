@@ -6,11 +6,13 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public final class Database {
+public final class Database 
+{
     private static Database instance;
     private final List<String> webpages = new ArrayList<>();
 
-    private Database() throws MalformedURLException {
+    public Database() throws MalformedURLException 
+    {
         loadData();
     }
 
