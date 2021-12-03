@@ -27,6 +27,7 @@ public final class Database {
         return Collections.unmodifiableCollection(webpages);
     }
 
+    //Lägger URL länkar i webpages som strängar. //F innebär att funktionalitet har hittats eller är känd
     private void loadData() throws MalformedURLException {
         //hemsidor
         add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/alkoholsortimentsnamnden");
@@ -58,6 +59,21 @@ public final class Database {
         add("https://www.ei.se/");
         add("https://etikprovningsmyndigheten.se/");
         add("https://www.ekn.se/");
+        add("https://fmi.se/");
+        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/fideikommissnamnden");
+        add("https://www.fi.se/");
+        add("https://www.fpr.se/");
+        add("https://fba.se/");
+        add("https://www.folkhalsomyndigheten.se/");
+        add("https://forskarskattenamnden.se/");
+        add("https://www.formas.se/");
+        add("https://forte.se/");
+        add("https://www.fortifikationsverket.se/");
+        add("https://www.levandehistoria.se/");
+        add("https://www.fmv.se/");
+        add("https://www.fra.se/");
+        add("https://www.fhs.se/");
+        add("");
 
         //funktionalitetssidor
         add("https://arbetsformedlingen.se/platsbanken/");
