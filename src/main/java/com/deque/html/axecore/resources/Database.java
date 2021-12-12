@@ -73,7 +73,6 @@ public final class Database {
         add("https://www.fmv.se/");
         add("https://www.fra.se/");
         add("https://www.fhs.se/");
-        add("");
 
         //funktionalitetssidor
         add("https://arbetsformedlingen.se/platsbanken/");

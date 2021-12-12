@@ -72,6 +72,9 @@ public class AxeExampleUnitTest {
 
     AxeRunOptions options = new AxeRunOptions();
     options.setRunOnly(runOnlyOptions);
+    AxeBuilder axe = new AxeBuilder().withOptions(options);
+    axe.disableIframeTesting();
+    
 
     Database db = new Database();
     Collection<String> pages = db.getWebpages();
@@ -85,7 +88,6 @@ public class AxeExampleUnitTest {
   for (Iterator<String> iterator = pages.iterator(); iterator.hasNext();) 
   {  
     this.webDriver.get(iterator.next());
-    AxeBuilder axe = new AxeBuilder().withOptions(options);
     Results result = axe.analyze(webDriver);
     List<Rule> violationList = result.getViolations();
 
@@ -101,5 +103,5 @@ public class AxeExampleUnitTest {
     e.printStackTrace();
 }
 
-  }
+}
 }
