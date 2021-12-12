@@ -72,9 +72,8 @@ public class AxeExampleUnitTest {
 
     AxeRunOptions options = new AxeRunOptions();
     options.setRunOnly(runOnlyOptions);
-    AxeBuilder axe = new AxeBuilder().withOptions(options);
-    axe.disableIframeTesting();
-    
+    AxeBuilder axe = new AxeBuilder().withOptions(options);   
+    axe.withoutIframeSandboxes();
 
     Database db = new Database();
     Collection<String> pages = db.getWebpages();
