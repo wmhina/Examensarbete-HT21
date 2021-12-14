@@ -61,7 +61,7 @@ public class AxeExampleUnitTest {
     webDriver.quit();
   }
 
-  @Test
+  
   public void checkAcessibility() throws MalformedURLException {
     // Ange vilka regler som ska testas mot, i vårt fall wcag2a
     AxeRunOnlyOptions runOnlyOptions = new AxeRunOnlyOptions();
@@ -115,16 +115,11 @@ public class AxeExampleUnitTest {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
+
   @Test
-  public void checkFunctionAcessibility() {
-
-    final List<String> pages = new ArrayList<>();
-    pages.add("https://arbetsformedlingen.se/platsbanken/");
-    pages.add("https://arbetsformedlingen.se/platsbanken/annonser");
-
+  public void checkFuctionality() throws MalformedURLException {
     // Ange vilka regler som ska testas mot, i vårt fall wcag2a
     AxeRunOnlyOptions runOnlyOptions = new AxeRunOnlyOptions();
     runOnlyOptions.setType("tag");
@@ -136,8 +131,12 @@ public class AxeExampleUnitTest {
     AxeBuilder axe = new AxeBuilder().withOptions(options);
     axe.withoutIframeSandboxes();
 
+    // Hämta databasen
+    Database db = new Database();
+    Collection<String> pages = db.getfWebpages();
+
     // Skapa filen som resultaten ska skrivas till
-    File file = new File("src\\test\\java\\results\\functionresults.txt");
+    File file = new File("src\\test\\java\\results\\resultsfuctionality.txt");
     try (FileWriter fw = new FileWriter(file, true);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter out = new PrintWriter(bw)) {
@@ -154,16 +153,16 @@ public class AxeExampleUnitTest {
         System.out.println("Violation list size :" + result.getViolations().size());
 
         /*
-         * These results indicate which rules did not run because no matching content
-         * was found on the page. For example, with no video, those rules won't run.
-         */
+        * These results indicate which rules did not run because no matching content
+        * was found on the page. For example, with no video, those rules won't run.
+        */
         System.out.println("Inapplicable list size :" + result.getInapplicable().size());
 
         /*
-         * These results were aborted and require further testing. This can happen
-         * either because of technical restrictions to what the rule can test, or
-         * because a javascript error occurred.
-         */
+        * These results were aborted and require further testing. This can happen
+        * either because of technical restrictions to what the rule can test, or
+        * because a javascript error occurred.
+        */
         System.out.println("Incomplete list size :" + result.getIncomplete().size());
 
         AxeReporter.getReadableAxeResults("", this.webDriver, violationList);

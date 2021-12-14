@@ -8,12 +8,16 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public final class Database {
+public final class Database 
+{
+    
     private static Database instance;
     private final List<String> webpages = new ArrayList<>();
+    private final List<String> fwebpages = new ArrayList<>();
 
     public Database() throws MalformedURLException {
-        loadData();
+        loadAccessibilityData();
+        loadFunctionalityData();
     }
 
     public static Database getInstance() throws MalformedURLException {
@@ -25,12 +29,21 @@ public final class Database {
         webpages.add(webpage);
     }
 
+    private void addf (String webpage) throws MalformedURLException
+    {
+        fwebpages.add(webpage);
+    }
+
     public Collection<String> getWebpages() {
         return Collections.unmodifiableCollection(webpages);
     }
 
+    public Collection<String> getfWebpages() {
+        return Collections.unmodifiableCollection(fwebpages);
+    }
+
     //Lägger URL länkar i webpages som strängar. //F innebär att funktionalitet har hittats eller är känd
-    private void loadData() throws MalformedURLException {
+    private void loadAccessibilityData() throws MalformedURLException {
         //hemsidor
         add("https://www.arn.se/");
         add("http://www.vetansvar.se/");
@@ -238,42 +251,44 @@ public final class Database {
         add("https://www.onep.se/");
         add("https://www.onh.se/");
         add("https://oks.se/");
-
-
+    }
+   
+    public void loadFunctionalityData() throws MalformedURLException{
         //funktionalitetssidor
-        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/alkoholsortimentsnamnden");
-        add("https://www.domstol.se/domarnamnden/");
-        add("https://arbetsformedlingen.se/platsbanken/");
-        add("https://adokweb.arn.se/digiforms2/htmlViewer?xsessiontag=1403809502");
-        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/fideikommissnamnden");
-        add("http://www.vetansvar.se/gorenanmalan.4.7eee19da168944000cb8ae5e.html");
-        add("https://www.lansstyrelsen.se/blekinge.html");
-        add("https://www.lansstyrelsen.se/dalarna.html");
-        add("https://www.lansstyrelsen.se/gotland.html");
-        add("https://www.lansstyrelsen.se/gavleborg.html");
-        add("https://www.lansstyrelsen.se/halland.html");
-        add("https://www.lansstyrelsen.se/jamtland.html");
-        add("https://www.lansstyrelsen.se/jonkoping.html");
-        add("https://www.lansstyrelsen.se/kalmar.html");
-        add("https://www.lansstyrelsen.se/kronoberg.html");
-        add("https://www.lansstyrelsen.se/norrbotten.html");
-        add("https://www.lansstyrelsen.se/skane.html");
-        add("https://www.lansstyrelsen.se/stockholm.html");
-        add("https://www.lansstyrelsen.se/sodermanland.html");
-        add("https://www.lansstyrelsen.se/uppsala.html");
-        add("https://www.lansstyrelsen.se/varmland.html");
-        add("https://www.lansstyrelsen.se/vasterbotten.html");
-        add("https://www.lansstyrelsen.se/vasternorrland.html");
-        add("https://www.lansstyrelsen.se/vastmanland.html");
-        add("https://www.lansstyrelsen.se/vastra-gotaland.html");
-        add("https://www.lansstyrelsen.se/orebro.html");
-        add("https://www.lansstyrelsen.se/ostergotland.html");
-        add("https://www.domstol.se/notarienamnden/");
-        add("https://www.domstol.se/rattshjalpsnamnden/");
-        add("https://www.domstol.se/rattshjalpsmyndigheten/");
-        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/skiljenamnden-i-vissa-trygghetsfragor");
-        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/statens-skaderegleringsnamnd");
-        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/statens-overklagandenamnd");
-        add("https://www.domstol.se/overklagandenamnden-for-namndemannauppdrag/");
+        addf("https://arbetsformedlingen.se/platsbanken/");
+        addf("https://adokweb.arn.se/digiforms2/htmlViewer?xsessiontag=1403809502");
+        addf("http://www.vetansvar.se/gorenanmalan.4.7eee19da168944000cb8ae5e.html");
+        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/alkoholsortimentsnamnden");
+        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/fideikommissnamnden");
+        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/skiljenamnden-i-vissa-trygghetsfragor");
+        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/statens-skaderegleringsnamnd");
+        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/statens-overklagandenamnd");
+        addf("https://www.lansstyrelsen.se/blekinge.html");
+        addf("https://www.lansstyrelsen.se/dalarna.html");
+        addf("https://www.lansstyrelsen.se/gotland.html");
+        addf("https://www.lansstyrelsen.se/gavleborg.html");
+        addf("https://www.lansstyrelsen.se/halland.html");
+        addf("https://www.lansstyrelsen.se/jamtland.html");
+        addf("https://www.lansstyrelsen.se/jonkoping.html");
+        addf("https://www.lansstyrelsen.se/kalmar.html");
+        addf("https://www.lansstyrelsen.se/kronoberg.html");
+        addf("https://www.lansstyrelsen.se/norrbotten.html");
+        addf("https://www.lansstyrelsen.se/skane.html");
+        addf("https://www.lansstyrelsen.se/stockholm.html");
+        addf("https://www.lansstyrelsen.se/sodermanland.html");
+        addf("https://www.lansstyrelsen.se/uppsala.html");
+        addf("https://www.lansstyrelsen.se/varmland.html");
+        addf("https://www.lansstyrelsen.se/vasterbotten.html");
+        addf("https://www.lansstyrelsen.se/vasternorrland.html");
+        addf("https://www.lansstyrelsen.se/vastmanland.html");
+        addf("https://www.lansstyrelsen.se/vastra-gotaland.html");
+        addf("https://www.lansstyrelsen.se/orebro.html");
+        addf("https://www.lansstyrelsen.se/ostergotland.html");
+        addf("https://www.domstol.se/domarnamnden/");
+        addf("https://www.domstol.se/notarienamnden/");
+        addf("https://www.domstol.se/rattshjalpsnamnden/");
+        addf("https://www.domstol.se/rattshjalpsmyndigheten/");
+        addf("https://www.domstol.se/overklagandenamnden-for-namndemannauppdrag/");
     }
 }
+

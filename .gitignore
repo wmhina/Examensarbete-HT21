@@ -9,3 +9,5 @@ target
 bin
 node_modules
 build
+src/test/java/results/results.txt
+src/test/java/results/resultsfuctionality.txt
