@@ -61,7 +61,7 @@ public class AxeExampleUnitTest {
     webDriver.quit();
   }
 
-  
+  @Test
   public void checkAcessibility() throws MalformedURLException {
     // Ange vilka regler som ska testas mot, i vårt fall wcag2a
     AxeRunOnlyOptions runOnlyOptions = new AxeRunOnlyOptions();
