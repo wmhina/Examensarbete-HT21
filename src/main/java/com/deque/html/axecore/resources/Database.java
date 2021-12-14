@@ -64,7 +64,7 @@ public final class Database
         add("https://www.delmos.se/");
         add("https://www.do.se/");
         add("https://www.domstol.se/");
-        add("https://www.ehalsomyndigheten.se/");
+        add("https://www.domstol.se/kammarratten-i-sundsvall/");
         add("https://www.ehalsomyndigheten.se/");
         add("https://www.ekobrottsmyndigheten.se/");
         add("https://www.esv.se/");
