@@ -251,6 +251,17 @@ public final class Database
         add("https://www.onep.se/");
         add("https://www.onh.se/");
         add("https://oks.se/");
+        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/alkoholsortimentsnamnden");
+        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/fideikommissnamnden");
+        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/skiljenamnden-i-vissa-trygghetsfragor");
+        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/statens-skaderegleringsnamnd");
+        add("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/statens-overklagandenamnd");
+        add("https://www.lansstyrelsen.se/jamtland.html"); 
+        add("https://www.domstol.se/domarnamnden/");
+        add("https://www.domstol.se/notarienamnden/");
+        add("https://www.domstol.se/rattshjalpsnamnden/");
+        add("https://www.domstol.se/rattshjalpsmyndigheten/");
+        add("https://www.domstol.se/overklagandenamnden-for-namndemannauppdrag/");
     }
    
     public void loadFunctionalityData() throws MalformedURLException{
@@ -258,37 +269,5 @@ public final class Database
         addf("https://arbetsformedlingen.se/platsbanken/");
         addf("https://adokweb.arn.se/digiforms2/htmlViewer?xsessiontag=1403809502");
         addf("http://www.vetansvar.se/gorenanmalan.4.7eee19da168944000cb8ae5e.html");
-        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/alkoholsortimentsnamnden");
-        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/fideikommissnamnden");
-        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/skiljenamnden-i-vissa-trygghetsfragor");
-        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/statens-skaderegleringsnamnd");
-        addf("https://www.kammarkollegiet.se/om-oss/organisation/stod-till-andra-myndigheter/statens-overklagandenamnd");
-        addf("https://www.lansstyrelsen.se/blekinge.html");
-        addf("https://www.lansstyrelsen.se/dalarna.html");
-        addf("https://www.lansstyrelsen.se/gotland.html");
-        addf("https://www.lansstyrelsen.se/gavleborg.html");
-        addf("https://www.lansstyrelsen.se/halland.html");
-        addf("https://www.lansstyrelsen.se/jamtland.html");
-        addf("https://www.lansstyrelsen.se/jonkoping.html");
-        addf("https://www.lansstyrelsen.se/kalmar.html");
-        addf("https://www.lansstyrelsen.se/kronoberg.html");
-        addf("https://www.lansstyrelsen.se/norrbotten.html");
-        addf("https://www.lansstyrelsen.se/skane.html");
-        addf("https://www.lansstyrelsen.se/stockholm.html");
-        addf("https://www.lansstyrelsen.se/sodermanland.html");
-        addf("https://www.lansstyrelsen.se/uppsala.html");
-        addf("https://www.lansstyrelsen.se/varmland.html");
-        addf("https://www.lansstyrelsen.se/vasterbotten.html");
-        addf("https://www.lansstyrelsen.se/vasternorrland.html");
-        addf("https://www.lansstyrelsen.se/vastmanland.html");
-        addf("https://www.lansstyrelsen.se/vastra-gotaland.html");
-        addf("https://www.lansstyrelsen.se/orebro.html");
-        addf("https://www.lansstyrelsen.se/ostergotland.html");
-        addf("https://www.domstol.se/domarnamnden/");
-        addf("https://www.domstol.se/notarienamnden/");
-        addf("https://www.domstol.se/rattshjalpsnamnden/");
-        addf("https://www.domstol.se/rattshjalpsmyndigheten/");
-        addf("https://www.domstol.se/overklagandenamnden-for-namndemannauppdrag/");
     }
 }
-
