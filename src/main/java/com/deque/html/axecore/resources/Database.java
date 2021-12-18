@@ -266,8 +266,15 @@ public final class Database
    
     public void loadFunctionalityData() throws MalformedURLException{
         //funktionalitetssidor
+        addf("https://polisen.se/utsatt-for-brott/polisanmalan/");
+        addf("https://polisen.se/utsatt-for-brott/olika-typer-av-brott/inbrott/");
         addf("https://arbetsformedlingen.se/platsbanken/");
-        addf("https://adokweb.arn.se/digiforms2/htmlViewer?xsessiontag=1403809502");
+        addf("https://arbetsformedlingen.se/platsbanken/annonser");
+        addf("http://www.vetansvar.se/hurdugorenanmalan.4.307b1efa16147dc525719bbd.html");
         addf("http://www.vetansvar.se/gorenanmalan.4.7eee19da168944000cb8ae5e.html");
+        addf("https://www.digg.se/digital-tillganglighet/anmal-bristande-tillganglighet");
+        addf("https://www.digg.se/digital-tillganglighet/anmalan-om-bristande-tillganglighet");
+        addf("https://www.socialstyrelsen.se/ansok-och-anmal/");
+        addf("https://www.socialstyrelsen.se/ansok-och-anmal/inte-nojd-med-varden/");
     }
 }
