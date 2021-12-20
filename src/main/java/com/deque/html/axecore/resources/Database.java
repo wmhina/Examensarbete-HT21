@@ -240,6 +240,9 @@ public final class Database
         add("https://www.tullverket.se/sv/privat");
         add("https://www.umu.se/");
         add("https://www.uhr.se/");
+        add("https://www.studera.nu/");
+        add("https://www.antagning.se/se/start");
+        add("https://www.utbyten.se/");
         add("https://www.uka.se/");
         add("https://www.upphandlingsmyndigheten.se/");
         add("https://www.uu.se/");
