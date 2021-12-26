@@ -23,6 +23,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -49,7 +51,7 @@ public class AxeExampleUnitTest {
   public void setUp() {
     // ChromeDriver needed to test for Shadow DOM testing support
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors");
+    options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors", "--dns-prefetch-disable", "--no-sandbox");
     webDriver = new ChromeDriver(options);
   }
 
@@ -61,12 +63,12 @@ public class AxeExampleUnitTest {
     webDriver.quit();
   }
 
-  @Test
+  
   public void checkAcessibility() throws MalformedURLException {
     // Ange vilka regler som ska testas mot, i vårt fall wcag2a
     AxeRunOnlyOptions runOnlyOptions = new AxeRunOnlyOptions();
     runOnlyOptions.setType("tag");
-    runOnlyOptions.setValues(Arrays.asList("wcag2a"));
+    runOnlyOptions.setValues(Arrays.asList("wcag21aa","wcag21a","wcag2aa","wcag2a"));
 
     // Instansiera builder-objekt, ange options
     AxeRunOptions options = new AxeRunOptions();
@@ -88,10 +90,10 @@ public class AxeExampleUnitTest {
       for (Iterator<String> iterator = pages.iterator(); iterator.hasNext();) {
         this.webDriver.get(iterator.next());
         Results result = axe.analyze(webDriver);
-        List<Rule> violationList = result.getViolations();
 
         // Rapportera resultat
         System.out.println(result.getUrl());
+        System.out.println("Passed list size :" + result.getPasses().size());
         /* These results indicate what elements failed the rules */
         System.out.println("Violation list size :" + result.getViolations().size());
 
@@ -108,7 +110,7 @@ public class AxeExampleUnitTest {
          */
         System.out.println("Incomplete list size :" + result.getIncomplete().size());
 
-        AxeReporter.getReadableAxeResults("", this.webDriver, violationList);
+        AxeReporter.getReadableAxeResults("", this.webDriver, result.getViolations());
         out.println(AxeReporter.getAxeResultString() + System.lineSeparator());
       }
 
@@ -123,7 +125,7 @@ public class AxeExampleUnitTest {
     // Ange vilka regler som ska testas mot, i vårt fall wcag2a
     AxeRunOnlyOptions runOnlyOptions = new AxeRunOnlyOptions();
     runOnlyOptions.setType("tag");
-    runOnlyOptions.setValues(Arrays.asList("wcag2a"));
+    runOnlyOptions.setValues(Arrays.asList("wcag21aa","wcag21a","wcag2aa","wcag2a"));
 
     // Instansiera builder-objekt, ange options
     AxeRunOptions options = new AxeRunOptions();
@@ -165,7 +167,7 @@ public class AxeExampleUnitTest {
         */
         System.out.println("Incomplete list size :" + result.getIncomplete().size());
 
-        AxeReporter.getReadableAxeResults("", this.webDriver, violationList);
+        AxeReporter.getReadableAxeResults("", this.webDriver, result.getViolations());
         out.println(AxeReporter.getAxeResultString() + System.lineSeparator());
       }
 

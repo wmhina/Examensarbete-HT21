@@ -44,7 +44,9 @@ public final class Database
 
     //Lägger URL länkar i webpages som strängar. //F innebär att funktionalitet har hittats eller är känd
     private void loadAccessibilityData() throws MalformedURLException {
-        //hemsidor
+        add("https://www.bth.se/");
+        add("http://www.energimyndigheten.se/");
+        add("https://www.spsm.se/");
         add("https://www.arn.se/");
         add("http://www.vetansvar.se/");
         add("https://arbetsformedlingen.se/");
@@ -52,8 +54,6 @@ public final class Database
         add("https://www.av.se/"); //F
         add("https://www.arvsfonden.se/"); //F
         add("https://www.barnombudsmannen.se/");
-        //Nedan har inte funktionalitet tittats på än
-        add("https://www.bth.se/");
         add("https://www.bfn.se/");
         add("https://www.bolagsverket.se/");
         add("https://www.boverket.se/");
@@ -187,12 +187,10 @@ public final class Database
         add("https://www.skolfi.se/");
         add("https://www.overklagandenamnden.se/");
         add("https://www.socialstyrelsen.se/");
-        add("https://www.spsm.se/");
         add("http://www.spelinspektionen.se/");
         add("http://statensansvarsnamnd.se/");
         add("https://www.sbu.se/sv/");
         add("https://arkdes.se/");
-        add("http://www.energimyndigheten.se/");
         add("https://www.sfv.se/");
         add("https://sfhm.se/");
         add("https://www.sgi.se/");

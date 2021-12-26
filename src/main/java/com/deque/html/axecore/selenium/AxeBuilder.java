@@ -76,7 +76,7 @@ public class AxeBuilder {
   /**
    * timeout of how the the scan should run until an error occurs.
    */
-  private int timeout = 30; // 30 seconds as default.
+  private int timeout = 60; // 30 seconds as default.
 
   private final ObjectMapper objectMapper;
 
